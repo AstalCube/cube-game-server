@@ -1,0 +1,35 @@
+
+SERVER->CLIENT
+
+	CUBE x y z t
+		set cube at x y z to type t
+		
+	WORLD x y z [x=0, y=0, z=0] [x=1, y=0, z=0] ...[x=0, y=0, z=0] [x=0, y=1, z=0] ... [x=0, y=0, z=0] [x=0, y=0, z=1] ...
+		set world size to x y z
+		set cubes to following data
+		
+	ID id
+		set client id to id
+		
+	CONSOLEMSG msg
+		print to client console
+		
+	POS id x y z xRot yRot zRot
+		client = id
+		set positon to x y z
+		set rotation to xRot yRot zRot
+		
+	REM id
+		remove client with id = id
+	
+CLIENT-> SERVER
+
+	CUBE x y z t
+		set cube at x y z to type t
+		
+	SERVCMD cmd
+		makes the server run the command
+		
+	POS x y z xRot yRot zRot
+		set positon to x y z
+		set rotation to xRot yRot zRot
